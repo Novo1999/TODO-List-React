@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+:root {
+  // Primary Colors
+  --clr-bright-blue: hsl(220, 98%, 61%);
+  --clr-check-background: linear-gradient hsl(192, 100%, 67%) to
+    hsl(280, 87%, 65%);
+  // Neutral
+  // Light theme
+  --clr-gray: hsl(0, 0%, 98%);
+  --clr-grayish-blue-1: hsl(236, 33%, 92%);
+  --clr-grayish-blue-2: hsl(233, 11%, 84%);
+  --clr-grayish-blue-3: hsl(236, 9%, 61%);
+  --clr-grayish-blue-4: hsl(235, 19%, 35%);
+  //Dark theme
+  --clr-dark-blue: hsl(235, 21%, 11%);
+  --clr-dark-desat-blue: hsl(235, 24%, 19%);
+  --clr-light-grayish-blue: hsl(234, 39%, 85%);
+  --clr-light-grayish-blue-hover: hsl(236, 33%, 92%);
+  --clr-dark-grayish-blue-1: hsl(234, 11%, 52%);
+  --clr-dark-grayish-blue-2: hsl(233, 14%, 35%);
+  --clr-dark-grayish-blue-3: hsl(237, 14%, 26%);
+  --weight-1: 400;
+  --weight-2: 700;
+  --font-family: "Josefin Sans", sans-serif;
+  --f-size: 18px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 96vh;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family);
+  background: var(--clr-dark-blue);
+}
+
+.app {
+  height: 35rem;
+  width: 30rem;
+  padding: 10px;
+}
+
+.header {
+  margin-bottom: -18rem;
+  h1 {
+    top: 2rem;
+    color: var(--clr-light-grayish-blue);
+    position: absolute;
+    z-index: 1;
+  }
+  img {
+    width: 120rem;
+    height: 12rem;
+    position: relative;
+    bottom: 13rem;
+    right: 46.5rem;
+    object-fit: contain;
+  }
+}
+.input {
+  position: relative;
+  input {
+    width: 28.5rem;
+    height: 55px;
+    font-size: var(--f-size);
+    color: var(--clr-gray);
+    background-color: var(--clr-dark-desat-blue);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+  }
+}
+.todo {
+  margin-top: 15px;
+  position: relative;
+  p {
+    color: var(--clr-dark-grayish-blue-2);
+  }
+  ul {
+    list-style-type: none;
+  }
+  input {
+    cursor: pointer;
+  }
+  li {
+    width: 28.5rem;
+    height: 55px;
+    font-size: var(--f-size);
+    color: var(--clr-gray);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.096);
+    display: grid;
+    grid-template-columns: 2.5rem 20rem 4rem;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: var(--weight-1);
+    background-color: var(--clr-dark-desat-blue);
+    button {
+      width: 3rem;
+      height: 2rem;
+      font-size: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--clr-dark-grayish-blue-1);
+      background: none;
+      border: none;
+      opacity: 0.5;
+      cursor: pointer;
+      position: relative;
+      left: 50px;
+    }
+    button:hover {
+      color: var(--clr-light-grayish-blue-hover);
+      opacity: 1;
+      transition: 0.3s all linear;
+    }
+    .task {
+      color: var(--clr-gray);
+    }
+  }
+}
+.active {
+  font-size: 16px;
+  text-decoration: underline;
+}
+.filter {
+  display: grid;
+  grid-template-columns: 10rem 18rem;
+
+  align-items: center;
+  background-color: var(--clr-dark-desat-blue);
+  height: 40px;
+  width: 28.5rem;
+  padding-left: 14px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.filter-btns {
+  display: grid;
+  grid-template-columns: 2rem 3rem 5rem;
+  align-items: center;
+  button {
+    background: none;
+    border: none;
+    color: var(--clr-light-grayish-blue);
+    cursor: pointer;
+    font-weight: var(--weight-1);
+    opacity: 0.5;
+  }
+  button:hover {
+    color: var(--clr-light-grayish-blue-hover);
+    opacity: 1;
+    transition: 0.3s all linear;
+  }
+}
+.filter-btns :nth-child(3) {
+  position: relative;
+  left: 4.5rem;
+  width: 130px;
+}
+
+@media screen and (max-width: 650px) {
+  .header {
+    h1 {
+      top: 1.5rem;
+    }
+  }
+  .app {
+    width: 10rem;
+    margin-right: 15rem;
+  }
+  .input input {
+    width: 24rem;
+    height: 3rem;
+    margin-top: 1.2rem;
+  }
+  .todo {
+    li {
+      width: 24rem;
+      button {
+        left: -20px;
+      }
+    }
+    .filter {
+      grid-template-columns: 8rem 1rem;
+      width: 24rem;
+    }
+    .filter-btns {
+      grid-template-columns: 1.7rem 2.5rem 5rem;
+    }
+    .filter-btns :nth-child(3) {
+      position: relative;
+      left: 3.2rem;
+      width: 130px;
+    }
+  }
+}
